@@ -1,0 +1,206 @@
+/* Import Google Font - Itim*/
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Itim','cursive';
+}
+body{
+    background: #202423;
+}
+.wrapper{
+    margin: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, 250px);
+}
+.wrapper li{
+    height: 250px;
+    list-style: none;
+    background: rgb(20, 19, 19);
+    border-radius: 7px;
+    padding: 15px 20px 20px;
+}
+.add-box, .icon, .bottom-content, .settings, .menu li, .popup, header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.add-box{
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+.add-box .icon{
+    height: 78px;
+    width: 78px;
+    color: #f7ff88;
+    font-size: 40px;
+    border-radius: 50%;
+    justify-content: center;
+    border: 2px dashed #fdff88;
+}
+.add-box p{
+    color: hsl(69, 100%, 76%);
+    font-weight: 500;
+    margin-top: 20px;
+}
+.wrapper .note{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.note, .details{
+    max-height: 250px;
+    overflow: auto;
+}
+.note p{
+    font-size: 22px;
+    font-weight: 500;
+}
+.note span{
+    display: block;
+    margin-top: 5px;
+    color: #97a2ac;
+    font-size: 16px;
+}
+.note .bottom-content{
+    padding-top: 3px;
+    border-top: 1px solid rgb(220, 245, 2);
+}
+.bottom-content span{
+    color: #757272;
+    font-size: 14px;
+}
+.bottom-content .settings i {
+    color: #757272;
+    font-size: 19px;
+    background-color: #151614;
+    cursor: pointer;   
+    
+}
+
+.settings{
+    position: relative;
+}
+
+.settings .menu{
+    position: absolute;
+    bottom: 0px;
+    right: -5px;
+    padding: 7px 0;
+    background: #161612;
+    border-radius: 3px;
+    transform: scale(0);
+    transform-origin: bottom right;
+    box-shadow: 0 0 8px rgba(187, 194, 191, 0.15);
+    transition: transform 0.2s ease; 
+}
+.settings:hover .menu{
+    transform: scale(1);
+}
+.settings .menu li{
+    height: 25px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 0;
+    padding-right: 17px 15px;
+    justify-content: flex-start;
+}
+.menu li:hover {
+    background: #535551;
+}
+.menu li{
+    padding-right: 8px;
+}
+.popup-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.2);
+}
+.popup-box .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    max-width: 370px;
+    width: 100%;
+    justify-content: center;
+    transform: translate(-50%,-50%);
+}
+.popup-box, .popup{        
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show,  .popup{         /* ".show" is declared as JS classlist to add "show" by addeventlistener. */      
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup .content{
+    width:calc(100% - 15px);
+    background: white;
+    border-radius: 5px;
+    background-color: #12130f;
+}
+.popup .content header{
+    padding: 15px 25px;
+    color: #e8f804;
+    border-bottom: 1px solid #e6e211;
+}
+.content header p{
+    font-size: 25px;
+    font-weight: 600;
+}
+.content header i{
+    color: #daec0d;
+    cursor: pointer;
+    font-size: 25px;
+}
+.content form{
+    margin: 15px 25px 35px;
+}
+.content form .row{
+    margin-bottom: 20px;
+    color: #dbdb0f;
+}
+form .row label{
+    display:block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.content form :where(input,textarea){
+    width: 100%;
+    height: 50px;
+    outline: none;
+    font-size: 19px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid #b1f006;
+}
+.content form textarea{
+    height: 100px;
+    resize: none;
+    padding: 8px 11px;
+}
+.content form button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    color: #c0e70f;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #191a19;
+}
+form button:hover{
+    background-color: #312e2e;
+}
